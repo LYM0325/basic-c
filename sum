@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main()
+{
+	int num1 = 0;
+	int num2 = 0;
+	printf("请输入两个数字："); 
+	scanf("%d %d",&num1,&num2);//%d之间用什么隔开，输入时就要用什么分割 
+	int sum = 0;
+	sum = num1+num2;
+	printf("sum=%d\n",sum); 
+	
+	return 0;
+} 
