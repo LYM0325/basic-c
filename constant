@@ -1,0 +1,24 @@
+#include<stdio.h>
+//define 常量 
+# define IP 3
+//枚举-enum 
+enum Sex
+{
+	male,
+	female,
+	secret //枚举常量 
+};  
+int main()
+{
+	//const常量 
+	const int a = 4;//a是变量，但是具有常属性，所以我们说a是常变量 
+//	a++;
+	printf("%d\n",a); 
+	int n =10;
+	int arr[10] = {0};//arr[]中应该输入一个常量，但是不能是常变量 
+	int arra[IP] = {0}; //这里的IP可以使用 
+    printf("%d\n",male);//0 
+    printf("%d\n",female);//1
+    printf("%d\n",secret);//2
+	return 0;
+} 
