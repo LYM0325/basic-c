@@ -4,6 +4,6 @@ int main()
 	char arr1[] = "abc";
 	char arr2[] = {'a','b','c'};
 	printf("%d\n",strlen(arr1));//3
-	printf("%d\n",strlen(arr2));//3
+	printf("%d\n",strlen(arr2));//在dev中会自动在末尾加上\0，所以输出的结果是3，否则会是一个随机的数字
 	return 0;
 }
