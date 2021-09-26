@@ -21,5 +21,7 @@ printf("%d",a|b);
 //  ^ 按位异或 相同为0，不同为1； 
 printf("%d",a^b);
 
+int arr[10] = {0};
+printf("%d",sizeof(arr));//输出的结果是40，所以想要输出数组的长度应该改成printf("%d",szieof(arr)/sizeof(int));
 	return 0;
 }
