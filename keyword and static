@@ -1,0 +1,30 @@
+#include<stdio.h>
+
+int main()
+{
+	//register int a = 10 寄存器变量 
+	//signed int定义的是有带符号数，但是signed通常省略
+	unsigned int num = -1;//定义的是无符号数 
+	printf("%u\n",num);
+	//struct 结构体关键字
+	//union 联合体/共用体 
+	//typedef 类型定义、类型重定义  
+	typedef unsigned int u_int;
+	u_int num1 = 1;
+	printf("%d\n",num1); 
+	int i = 0;
+	while(i<5){
+		test();
+		i++;
+	}
+	//extern用来声明外部符号 
+	return 0;
+}
+void test(){
+	static int a = 1;//a是静态的局部变量，
+	//static修饰全局变量，修改了变量的作用域,只能在自己的源文件内部使用
+	//static修饰函数，改变了函数的链接属性，不能被外部函数调用 
+	a++;
+	printf("a = %d\n",a);//不加static输出的是五个2，加上static输出的是23456
+	 
+}
