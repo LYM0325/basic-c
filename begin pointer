@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main(){
+	//32位指的是32根地址线、数据线
+	int a = 10;
+	printf("%p\n",&a);//用%p输出地址 
+	int* p = &a;//*称为解引用操作符，指针p所储存的是a的内存地址 
+	printf("%p\n",p);
+	* p = 20;
+	printf("%d\n",*p);//此处将a的值改成了20 
+	char ch = 'w';
+	char *pc = &ch;
+	* pc = 'a';
+	printf("%c\n",*pc);
+	printf("%d",sizeof(pc));//64位地址所以是8个字节 
+	return 0;
+}
