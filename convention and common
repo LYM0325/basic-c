@@ -1,0 +1,42 @@
+#include<stdio.h>
+int main(){
+	int a,b,temp;
+	scanf("%d %d",&a,&b);
+	convention(a,b);
+	common(a,b);
+	return 0;
+}
+int convention(int x,int y){
+	int z;
+	if(x>y){
+		z=y;
+	}
+	else{
+		z=x;
+	}
+	while(1){
+		if(x%z==0&&y%z==0){
+			printf("%d\n",z);
+			break;
+		}
+		else(z--);
+	}
+}
+int common(int x,int y){
+		int z;
+	if(x>y){
+		z=x;
+	}
+	else{
+		z=y;
+	}
+	while(1){
+		if(z%x==0&&z%y==0){
+			printf("%d\n",z);
+			break;
+		}
+		else{
+			z++;
+		}
+	}
+}
