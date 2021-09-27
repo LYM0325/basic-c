@@ -1,5 +1,6 @@
 #include<stdio.h>
-
+//宏定义
+#define MAX(X,Y) (X>Y?X:Y) 
 int main()
 {
 	//register int a = 10 寄存器变量 
@@ -17,7 +18,11 @@ int main()
 		test();
 		i++;
 	}
-	//extern用来声明外部符号 
+	//extern用来声明外部符号，目前使用还是有点问题
+	int a = 10;
+	int b = 20;
+	int max = MAX(a,b);//使用了宏
+	printf("max =%d",max);
 	return 0;
 }
 void test(){
