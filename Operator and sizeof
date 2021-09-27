@@ -20,6 +20,20 @@ printf("%d",a&b);
 printf("%d",a|b); 
 //  ^ 按位异或 相同为0，不同为1； 
 printf("%d",a^b);
+//自增自减运算符
+int a = 10;
+	int b = a++;
+	printf("%d %d",a,b); //11 10
+	int c = ++a;
+	printf("%d %d",a ,c);//12 12
+	int d = a--;
+	printf("%d %d",a ,d);//11 12
+	int e = --a;
+	printf("%d %d",a ,e);//10 10
+//三目运算符
+	int num1 = 10;
+	int num2 = 11;
+	printf("%d",num1>num2?num1:num2);
 
 int arr[10] = {0};
 printf("%d",sizeof(arr));//输出的结果是40，所以想要输出数组的长度应该改成printf("%d",szieof(arr)/sizeof(int));
