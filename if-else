@@ -36,3 +36,4 @@ int main(){
 	}
 	return 0;
 }
+//else始终是与离得最近的if相匹配
