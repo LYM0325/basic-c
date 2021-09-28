@@ -1,3 +1,4 @@
+//break是跳出整个循环，continue是跳出当前循环，而且在程序遇到continue的时候，当前循环中在continue后面的部分都不会执行。
 #include<stdio.h>
 int main(){
 	int day;
