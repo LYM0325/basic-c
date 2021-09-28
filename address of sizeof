@@ -1,0 +1,10 @@
+#include<stdio.h>
+int main(){
+	printf("%d\n",(char*)); //8
+	printf("%d\n",(short*));//8
+	printf("%d\n",(int*)); //8
+	printf("%d\n",(double*));//8
+	//32位的计算机中，地址的存储是4个字节，与类型无关，
+	//64位的计算机中地址的存储是8个字节 
+	return 0;
+}
