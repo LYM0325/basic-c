@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main()
+{
+//	int ch = getchar();
+//	putchar(ch);
+//	printf("%c\n",ch);//这两句话的效果是一样的
+	int ch = 0;
+	while((ch = getchar())!=EOF)//此处的EOF是ctrl+z 
+	{
+		putchar(ch);
+	}
+	return 0;	
+}
