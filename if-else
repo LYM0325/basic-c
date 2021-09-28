@@ -36,4 +36,4 @@ int main(){
 	}
 	return 0;
 }
-//else始终是与离得最近的if相匹配
+//else始终是与离得最近的if相匹配，否则就是使{}将上一个if语句与else分离
