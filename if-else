@@ -1,0 +1,38 @@
+#include<stdio.h>
+int main(){
+	
+	int age;
+	printf("请输入你的年龄:");
+	scanf("%d",&age);
+	if(age<18){
+		printf("青年人");
+	}
+	else if(age>=18&&age<28){
+		printf("青年"); 
+	}
+	else if(age>=28&&age<50){
+		printf("壮年");
+	}
+	else{
+	printf("老年");
+	}
+//下面是if-else的内部嵌套的写法///////////////////////
+  int age;
+	printf("请输入你的年龄:");
+	scanf("%d",&age);
+	if(age<18){
+		printf("青年人");
+	}
+	else{
+		if(age>=18&&age<28){
+			printf("青年");
+		}
+		else if(age>=28&&age<50){
+			printf("壮年");	
+		}
+		else{
+			printf("老年");
+		}
+	}
+	return 0;
+}
