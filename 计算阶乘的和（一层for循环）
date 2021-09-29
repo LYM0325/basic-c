@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main()
+{
+	int i = 1;
+	int temp = 1;
+	int sum = 0;
+	int num;
+	printf("请输入数字：");
+	scanf("%d",&num);
+	for(i = 1;i <= num;i++){
+		temp = temp * i;//1 2 6   这里的temp不会重置 
+		printf("%d\n",temp);
+		sum = sum + temp;
+	}
+	printf("%d",sum);
+	return 0;
+ } 
