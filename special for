@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main()
+{
+	int i = 0;
+	int j = 0;
+	for(;i<10;i++){
+		for(;j<10;j++){
+			printf("haha\n");//这里的j从0变成10之后，i变成2，但是此时的j依旧是10，所以不执行循环的内容 
+		}//最后只能输出10个haha 
+	}
+	int m,n;
+	for(m = 0,n =0;m<2&&n<5;++m,n++){
+		printf("hehe\n");
+	} //这两个变量控制的for循环也是允许的，最后会输出两个hehe 
+	return 0;
+}
