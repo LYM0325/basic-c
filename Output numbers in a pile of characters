@@ -3,7 +3,7 @@ int main(){
 	int ch = 0;
 	while((ch = getchar())!=EOF){
 		if(ch<'0'||ch>'9')
-		continue;
+		continue;//只会输出一堆字符中的数字
 		putchar(ch);
 	}
 	return 0;
