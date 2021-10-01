@@ -19,9 +19,9 @@ int main()
 {
 	int a = 10;
 	int b = 20;
-	swap1(a,b);
+	swap1(a,b);//传值函数
 	printf("%d %d\n",a,b);
-	swap2(&a,&b);
+	swap2(&a,&b);//传址函数
 	printf("%d %d\n",a,b); 
 	return 0;
 }
