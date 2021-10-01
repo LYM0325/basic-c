@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char arr1[] = "hello";
+	char arr2[10] = {"##########"};
+	strcpy(arr2,arr1);
+	printf("%s\n",arr2);//当打印时遇见'\0',所以打印结束，后面的就不打印了，但是还存在 
+	printf("%d\n",arr2[5]);//将字符串结束时的'\0'也复制过来了 
+	printf("%c\n",arr2[6]);
+////////////////////////////////////
+	memset(arr1,'*',2);//这句话的意思是将arr1数组的前2个用*代替 
+	printf("%s\n",arr1);//输出的是**llo
+	
+	
+	
+	
+	return 0;
+}
