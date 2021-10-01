@@ -1,0 +1,25 @@
+#include<stdio.h>
+void Add(int*p)
+{
+	(*p)++;//因为++的优先级比*高，所以必须要把*p括到一起 
+}
+int add(int p)
+{
+	p++;
+	return p;
+}
+int main()
+{
+	int num = 0;
+	Add(&num);
+	printf("num = %d\n",num);//1
+	Add(&num);
+	printf("num = %d\n",num);//2
+	Add(&num);
+	printf("num = %d\n",num);//3
+	add(&num);
+	printf("num = %d\n",num);//3
+	int num2 = add(num);
+	printf("num = %d\n",num2);//4
+	return 0;
+}
