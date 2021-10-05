@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main()
+{
+	//int a = 10;
+//	int *p = &a;//指针是一个变量，存的是地址 
+	//指针的在32位的计算机中占4个字节，64位占8个字节
+	printf("%d\n",sizeof(char*));//4或8 
+	printf("%d\n",sizeof(int*));//4或8
+	int a = 0x11223344;
+	int *pa = &a;
+	char *pc = &a;
+	*pa = 0;//将值改成了0
+	*pc = 0;//将值改成了00332211 
+	//指针类型决定了指针进行解引用的操作的时候能访问空间的大小
+	//int *p 4个字节
+	//char *p 1个字节
+	//double *p 8个字节 
+	printf("%p\n",pa);
+	printf("%p\n",pa+1);//跳过4个字节 
+	printf("%p\n",pc); 
+	printf("%p\n",pc+1);//跳过1个字节 
+	//指针类型决定了指针的步长(跳过几个字节 ) 
+	int arr[10] = {0};
+	int *p = arr;//这种可以实现每个值都改为1 
+	//char *p = arr;这种一次只能移动一个字节，所以最后只能改变两半四字节的0 
+	int i = 0;
+	for(i=0;i<10;i++)
+	{
+		*(p+i) = 1;
+	 } 
+	return 0;
+}
