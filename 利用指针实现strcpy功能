@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<string.h>
+#include<assert.h>
+void my_strcpy(char* dest,char* src)//src如果传进来一个空指针，系统会崩溃 
+{
+//	while(*src != '\0')
+//	{	
+//	*dest = *src;
+//	dest++;
+//	src++;
+//	}
+//	*dest = *src;
+	assert(src != NULL);//断言，出现问题的时候能提供很好的参考信息 
+	while(*dest++ = *src++)
+	{
+		;
+	}
+}
+int main()
+{
+	char arr1[10] = "xxxxxx";
+	char arr2[] = "hello";
+	my_strcpy(arr1,arr2);//arr2不能为空指针，否则就会出现系统崩溃 
+	printf("%s\n",arr1);
+	return 0;
+} 
