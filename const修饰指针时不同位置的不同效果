@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main()
+{
+	const int num = 10;
+	const int* p = &num;
+	int n = 20;
+	//*p = n;因为指针被const修饰，所以指针指向的内容不能被修改。 
+	p = &n;//但是指针变量本身是可以被修改的 
+	//int const* p = &num;这种情况，指针指向的内容是可以被修改的，但是指针变量本身是不能被修改的 
+	printf("%d\n",num); 
+	printf("%d\n",*p); 
+	return 0;
+ } 
