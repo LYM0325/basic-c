@@ -1,0 +1,25 @@
+#include<stdio.h>
+struct stu
+{
+	//结构的成员变量 
+	char name[20];
+	int age;
+	char id[20];
+}s1,s2;//s1和s2也是结构体的变量，是全局变量 
+void print1(struct stu t)
+{
+	printf("%s %d %s\n",t.name,t.age,t.id);
+}
+void print2(struct stu *p)
+{
+	printf("%s %d %s\n",p->name,p->age,p->id);
+}
+int main()
+{
+	struct stu s = {"张三",30,"2019002477"};//s是局部变量
+	printf("%s\n",s.id);
+	printf("%s\n",s.name);
+	print1(s);//传值调用 
+	print2(&s);//传址调用，不用新开辟空间，能改变值，所以更好用 
+	return 0;
+}
