@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main()
+{
+	int values[5] = {1,1,1,1,1};
+	int *vp = NULL;
+	//第一种的写法更符合标准，因为C语言规定了可以和指针后面的一个地址进行比较，不能和第一个之前的地址进行比较 
+	for(vp = &values[5];vp>&values[0];)
+	{
+		*--vp = 0;
+	}
+	//
+	for(vp = &values[4];vp>=&values[0];vp--)
+	{
+		*vp = 0;
+	}
+	return 0;
+}
