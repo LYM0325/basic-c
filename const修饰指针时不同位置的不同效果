@@ -2,12 +2,14 @@
 int main()
 {
 	const int num = 10;
+	int  n = 20; 
 	const int* p = &num;
-	int n = 20;
-	//*p = n;因为指针被const修饰，所以指针指向的内容不能被修改。 
-	p = &n;//但是指针变量本身是可以被修改的 
-	//int const* p = &num;这种情况，指针指向的内容是可以被修改的，但是指针变量本身是不能被修改的 
-	printf("%d\n",num); 
-	printf("%d\n",*p); 
+	*p = 20; //不行 因为指针被const修饰，所以指针指向的内容不能被修改。
+	p = &n;//可以 指针变量本身是可以被修改的
+	printf("%d %d",num,*p);
+	int *const p = &num;
+	*p = 20;//可以，因为const修饰的是p，所以指针指向的内容可以修改
+	p = &n;//不行 指针变量不能被修改
+	printf("%d %d",num,*p);
 	return 0;
  } 
