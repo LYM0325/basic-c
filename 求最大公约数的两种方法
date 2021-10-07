@@ -1,0 +1,35 @@
+#include<stdio.h>
+int  main()
+{
+	int n =0, m = 0;
+	scanf("%d%d",&n,&m);
+//方法一： 
+//	if(n>m)
+//	{
+//		int temp = 0;
+//		n = temp;
+//		n = m;
+//		m = temp;
+//	}	
+//	int i =m;
+	int i = m>n?m:n;//使用三目运算符可以直接代替上面的6行代码 
+	while(1)
+	{
+		i++;
+		if(i%m==0&&i%n==0)
+		{	
+		printf("%d ",i);
+		break;
+		}
+	}
+//方法二：
+ 	for(i = 1;;i++)
+ 	{
+ 		if(n*i%m==0)
+ 		{
+ 			printf("%d ",n*i);
+ 			break;
+		 }
+	 }
+	return 0;
+}
