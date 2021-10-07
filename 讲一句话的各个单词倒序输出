@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<string.h>
+void reverse(char* left,char* right)
+{
+	
+	while(left<right){
+	char temp = 0;
+	temp = *left;
+	*left = *right;
+	*right = temp;
+	left++;
+	right--; 
+	}
+	
+}
+int main()
+{
+	char arr[100] = {0};
+	//不能使用scanf，因为scanf遇见空格就结束了  
+	gets(arr);
+	//三步翻转法
+	//1.字符串整体翻转
+	//.jingieb ekil i
+	int len =strlen(arr);
+	reverse(arr,arr+len-1);
+	//2.每个单词逆序 
+	//beijing. like i
+	char* start = arr;
+	while(*start)
+	{
+		char* end = start;
+		while(*end != ' '&&*end!='\0')
+		{
+			end++;
+		}
+		reverse(start,end-1);
+		if(*end ==' ')
+			start = end+1;
+		else
+			start = end;
+		
+	 } 
+	puts(arr);
+	return 0;
+}
