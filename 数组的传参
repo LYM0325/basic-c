@@ -1,0 +1,31 @@
+#include<stdio.h>
+//一维数组的传参 
+void test1(int arr[]){
+}
+void test1(int arr[10]){
+}
+void test1(int *arr){
+}
+void test2(int *arr[]){
+}
+void test2(int *arr[20]){
+}
+void test2(int **arr){
+}
+//二维数组传参
+void test(int arr[3][5]){ 
+ }
+void test(int arr[][5]){
+}
+void test(int (*arr)[5]){
+}
+int main()
+{
+	int arr1[10] = {0};
+	int *arr2[20] = {0};
+	test1(arr);
+	test2(arr2);
+	int arr3[3][5] = {0};
+	test(arr3);
+	return 0;
+}
