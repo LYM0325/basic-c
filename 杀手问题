@@ -1,4 +1,4 @@
-//A说不是我，B说是C，C说是D，D说C在胡说
+//A说不是我，B说是C，C说是D，D说C在胡说  三真一假
 #include<stdio.h>
 int main()
 {
