@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main()
+{
+	int money = 0;
+	printf("汽水一瓶一元，你有多少钱：");
+	scanf("%d",&money);
+	int total1 = money;
+	int empty = money;
+	while(empty>=2)
+	{
+		total1 += empty / 2;
+		empty = empty / 2 + empty % 2;
+	}
+	//找到的规律
+	int total2 = 0;
+	if(money>0)
+	{
+		total2 = 2 * money - 1;
+	 } 
+	printf("%d\n",total1);
+	printf("%d\n",total2);
+	return 0;
+}
