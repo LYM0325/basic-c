@@ -1,0 +1,26 @@
+#include<stdio.h>
+//函数指针：指向函数的指针，存放函数地址的指针 
+int add(int x,int y)
+{
+	return x+y;
+}
+int main()
+{
+	int a = 10;
+	int * p = &a;
+	
+	char ch = 'w';
+	char *pc = &ch;
+	
+	int arr[10] = {0};
+	int(*parr)[10] = &arr;	
+	
+	printf("%p\n",&add);
+	printf("%p\n",add);//完全等价但是函数名！=&函数名 
+	int (*pf)(int,int) = &add;//pf就是一个函数指针变量,说明add == pf 
+	int ret = (*pf)(3,5); 
+	int sum = pf(3,5); 
+	printf("%d ",ret);
+	printf("%d ",sum);
+	return 0;
+}
