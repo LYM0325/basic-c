@@ -1,0 +1,16 @@
+#include<stdio.h>
+int i;
+int main()
+{
+	i--;
+	if(i>sizeof(i))
+	{
+		printf(">");
+	}
+	else
+	{
+		printf("<");
+	}
+	//输出的结果是>,因为sizeof运算的结果是一个无符号数，所以在进行比较的时候，会把-1转换成一个无符号的数 
+	return 0;
+}
