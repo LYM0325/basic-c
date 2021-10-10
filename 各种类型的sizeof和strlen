@@ -1,0 +1,85 @@
+#include<stdio.h>
+#include<stdio.h>
+int main()
+{
+	int a[] = {1,2,3,4};
+	printf("%d\n",sizeof(a));//16
+	printf("%d\n",sizeof(a+0));//4/8
+	printf("%d\n",sizeof(*a));//4
+	printf("%d\n",sizeof(a+1));//4/8
+	printf("%d\n",sizeof(a[1]));//4
+	
+	printf("%d\n",sizeof(&a));//4/8
+	printf("%d\n",sizeof(*&a));//16
+	printf("%d\n",sizeof(&a+1));//4/8
+	printf("%d\n",sizeof(&a[0]));//4/8
+	printf("%d\n",sizeof(&a[0]+1));//4/8	
+							
+	char arr[] = {'a','b','c','d','e','f'};
+	printf("%d\n",sizeof(arr));//6
+	printf("%d\n",sizeof(arr+0));//4/8
+	printf("%d\n",sizeof(*arr));//1
+	printf("%d\n",sizeof(arr[1]));//1
+	printf("%d\n",sizeof(&arr));//4/8
+	printf("%d\n",sizeof(&arr+1));//4/8
+	printf("%d\n",sizeof(&arr[0]+1));//4/8
+	
+//	printf("%d\n",strlen(arr));//随机值,strlen找不到'\0',所以是随机值 
+//	printf("%d\n",strlen(arr+0));//随机值 
+//	printf("%d\n",strlen(*arr));//err 
+//	printf("%d\n",strlen(arr[1]));//err 
+//	printf("%d\n",strlen(&arr));//随机值 
+//	printf("%d\n",strlen(&arr+1));//随机值 
+//	printf("%d\n",strlen(&arr[0]+1));//随机值 
+	
+	char b[] = {"abcdef"};
+	printf("%d\n",sizeof(b));//7
+	printf("%d\n",sizeof(b+0));//4/8
+	printf("%d\n",sizeof(*b));//1
+	printf("%d\n",sizeof(b[1]));//1
+	printf("%d\n",sizeof(&b));//4/8
+	printf("%d\n",sizeof(&b+1));//4/8
+	printf("%d\n",sizeof(&b[0]+1));//4/8
+	printf("//////////////////////////////////////\n");
+	printf("%d\n",strlen(b));//6
+	printf("%d\n",strlen(b+0));//6
+//	printf("%d\n",strlen(*b));//err
+//	printf("%d\n",strlen(b[1]));//err 
+	printf("%d\n",strlen(&b));//6
+	printf("%d\n",strlen(&b+1));//随机值 
+	printf("%d\n",strlen(&b[0]+1));//5
+	
+	char * p = "abcdef";
+	printf("%d\n",sizeof(p));//4/8
+	printf("%d\n",sizeof(p+1));//4/8
+	printf("%d\n",sizeof(*p));//1
+	printf("%d\n",sizeof(p[0]));//1 
+	printf("%d\n",sizeof(&p));//4/8
+	printf("%d\n",sizeof(&p+1));//4/8
+	printf("%d\n",sizeof(&p[0]+1));//4/8
+	
+	printf("%d\n",strlen(p));//6
+	printf("%d\n",strlen(p+1));//5
+//	printf("%d\n",strlen(*p));//err 
+//	printf("%d\n",strlen(p[0]));//err 
+	printf("%d\n",strlen(&p));//随机值 
+	printf("%d\n",strlen(&p+1));//随机值 
+	printf("%d\n",strlen(&p[0]+1));//5
+	
+	int a[3][4] = {0};
+	printf("%d\n",sizeof(a)); //48
+	printf("%d\n",sizeof(a[0][0])); //4
+	printf("%d\n",sizeof(a[0])); //16
+	printf("%d\n",sizeof(a[0]+1)); //4/8  a[0]没有单独放在sizeof中，所以a[0]+1表示第一行第二个元素的地址 
+	printf("%d\n",sizeof(*(a[0]+1))); //4  代表第一行第二个元素 
+	printf("%d\n",sizeof(a+1)); //4/8 a表示数组首元素地址，为第一行地址，+1表示为第二行地址 
+	printf("%d\n",sizeof(*(a+1)));//16   *(a+1) -> a[1]
+	printf("%d\n",sizeof(&a[0]+1)); //4/8
+	printf("%d\n",sizeof(*(a[0]+1))); //16
+	printf("%d\n",sizeof(*a));//16 a表示二维数组首元素即第一行的地址 
+	printf("%d\n",sizeof(a[3])); //16 sizeof内部的表达式不进行计算 ，所以不存在也能通过类型计算 
+	
+	
+	
+ 	return 0;
+}
