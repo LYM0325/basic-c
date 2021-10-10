@@ -1,0 +1,68 @@
+#include<stdio.h>
+void menu()
+{
+	printf("1.add  2.sub  3.mul  4.div  0.exit\n");
+}
+int add(int x,int y)
+{
+	return x+y;
+}
+int sub(int x,int y)
+{
+	return x-y;
+}
+int mul(int x,int y)
+{
+	return x*y;
+}
+int div(int x,int y)
+{
+	return x/y;
+}
+int main()
+{
+	int input = 0;
+	do{
+		int x = 0;
+		int y = 0;
+		int ret =0; 
+		menu();
+		printf("请选择：");	
+		scanf("%d",&input);
+		switch(input)
+		{
+			case 1:
+				printf("请输入两个操作数：");
+				scanf("%d%d",&x,&y);
+				ret = add(x,y);
+				printf("ret = %d\n",ret);
+				break;
+			case 2:
+				printf("请输入两个操作数：");
+				scanf("%d%d",&x,&y);
+				ret = sub(x,y);
+				printf("ret = %d\n",ret);
+				break;
+			case 3:
+				printf("请输入两个操作数：");
+				scanf("%d%d",&x,&y);
+				ret = mul(x,y);
+				printf("ret = %d\n",ret);
+				break;
+			case 4:
+				printf("请输入两个操作数：");
+				scanf("%d%d",&x,&y);
+				ret = div(x,y);
+				printf("ret = %d\n",ret);
+				break;
+			default:
+			{
+				printf("请重新输入：\n");
+			 } 
+		}
+		
+	}while(input);
+	int (*pf1)(int,int) = add;
+	int (*pf2)(int,int) = sub;
+	int (*pfarr[2])(int,int) = {add,sub};//pfarr就是函数指针数组 
+	return 0;
