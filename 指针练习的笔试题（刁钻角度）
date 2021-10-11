@@ -1,0 +1,50 @@
+#include<stdio.h>
+struct test
+{
+	int num;
+	char* name;
+	short date;
+	char cha[2];
+	short ba[4];
+}*p;//结构体大小为20字节 
+int main()
+{
+	printf("%p\n",p + 0x1);//0x100014  跳过一个结构体 
+	printf("%p\n",(unsigned long)p + 0x1);//0x100001 跳过一个字节
+	printf("%p\n",(unsigned int *)p + 0x1);//0x100004 跳过一个整型 
+	
+	int a[4] = {1,2,3,4};
+	int *p1 = (int *)(&a+1);//p1指向数组后一个地址 
+	int *p2 = (int *)((int)a + 1);//地址转换成整型再加1，只跳过一个字节，所以要看小端存储 
+	printf("%x,%x\n",p1[-1],*p2);//4,2000000
+	
+	int a1[3][2] = {(0,1),(2,3),(4,5)}; //用的是小括号，所以是逗号表达式，最终储存的是1，3，5 
+	int *p;
+	p = a1[0];
+	printf("%d\n",p[0]);//1
+	
+	int a2[5][5];
+	int(*p3)[4];
+	p3 = a2;//p的数组只有4个元素，所以p[4][2]是第19位，而a[4][2]是第23位 
+	printf("%p,%d\n",&p3[4][2]-&a2[4][2],&p3[4][2]-&a2[4][2]);//fffffffc,-4
+	
+	int a3[2][5] = {1,2,3,4,5,6,7,8,9,10};
+	int *p4 = (int *)(&a3 + 1);
+	int *p5 = (int *)(*(a3 + 1));
+	printf("%d %d\n",*(p4-1),*(p5-1));//10,5
+	
+	char * a4[] = {"work","at","alibaba"};
+	char **pa = a4;
+	pa++;
+	printf("%s\n", *pa);//at
+	 
+	char* c[] = {"enter","new","point","first"};
+	char** cp[] = {c+3,c+2,c+1,c};
+	char*** cpp = cp;
+	printf("%s\n",**++cpp);//point
+	printf("%s\n",*--*++cpp+3);//er  后面的+3，已经进行了两次解引用操作，找到了字符串的首位，+3就是字符串的首地址+3，所以跳过了前三个字符 
+	printf("%s\n",*cpp[-2]+3);//st
+	printf("%s\n",cpp[-1][-1]+1);//ew 
+	//++已经改变了cpp指向的地址，所以后面的cpp已经发生了变化，但是注意cpp-2时cpp的值没有改变
+	return 0;
+ } 
