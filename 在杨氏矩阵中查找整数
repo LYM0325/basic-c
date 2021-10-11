@@ -1,0 +1,55 @@
+#include<stdio.h>
+int find_num(int a[3][3],int *r,int *c,int z)
+{
+	int x = 0;
+	int y = *c-1;
+	while(x<*r && y>=0)
+	{
+		if(a[x][y] < z)
+		{
+			x++;
+		}
+		else if(a[x][y] > z)
+		{
+			y--;
+		}
+		else
+		{
+			*r = x;
+			*c = y;
+			return 1;	
+		}
+	}
+}
+int main()
+{
+	int a[3][3] = {1,2,3,4,5,6,7,8,9};
+	int i = 0;
+	int j = 0;
+	int input = 0;
+	scanf("%d",&input);
+//暴力遍历 
+	for(i = 0;i<3;i++)
+	{
+		for(j = 0;j<3;j++)
+		{
+			if(a[i][j] == input)
+			{
+				printf("%d %d\n",i,j);
+			}
+		}
+	}
+//时间复杂度小于O(n),每次查找去掉一行或者是去掉一列 	
+	int x = 3;
+	int y = 3;
+	int ret = find_num(a,&x,&y,input);
+	if(ret == 1)
+	{
+		printf("找到了%d %d\n",x,y);
+	}
+	else
+	{
+		printf("找不到");
+	}
+	return 0;
+}
