@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<string.h>
+#include<assert.h>
+char * my_strcat(char* dest,const char* src)
+{
+	assert(dest && src);
+	char* ret = dest;
+	while(*dest)
+	{
+		dest++;
+	}
+	while(*dest++ = *src++)
+	{
+		; 
+	}
+	return ret;//返回目标函数的起始地址 
+}
+int main()
+{
+	char arr[20] = "hello ";
+	strcat(arr,"world");//字符串追加,追加的字符串后也会加上\0，但是不能追加我自己 
+	printf("%s\n",arr);
+	char arr1[20] = "hello a ";
+	char arr2[20] = "world";
+	my_strcat(arr1,arr2);
+	printf("%s\n",arr1);
+	printf("%s\n",my_strcat(arr1,arr2));
+	return 0;
+}
