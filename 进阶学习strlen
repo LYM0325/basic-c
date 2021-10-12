@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<assert.h>
+//以前学的三种实现strlen的方法 
+//1.计数器版本
+//2.递归的版本
+//3.指针-指针的版本 
+int  my_strlen(const char *str)//加上const指针指向的字符串内容不能被修改 
+{
+	int count = 0;
+	assert(str != NULL);//加上断言，防止传进来的字符串为空 
+	while(*str != '\0')
+	{
+		count++;
+		*str++;
+	}
+	return count;
+}
+int main()
+{
+	char arr[] = "hello";
+	int len = my_strlen(arr);
+	printf("字符串的长度是：%d",len);
+	if(strlen("abc")-strlen("abcdef") > 0)//输出是> 
+	{
+		printf(">\n");
+	} 
+	 else
+	{
+	 	printf("<\n");
+	}
+//因为库函数strlen的返回值是一个无符号整型 
+	return 0;
+}
