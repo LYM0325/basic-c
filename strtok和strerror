@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<string.h>
+//strtok 切割字符串 
+//strerror 在调用库函数失败的时候都会设置错误码如 int error 
+int main()
+{
+	
+	char arr[] = "www.baidu.com hehe";
+	char* p = ". ";//空格也能作为分隔符 
+	char* ret = NULL;
+//	ret = strtok(arr,p); //strtok的使用会修改原字符串
+//	printf("%s\n",ret);
+//	ret = strtok(NULL,p);//第一次调用的时候要传字符串的地址，之后使用传NULL 
+//	printf("%s\n",ret);
+//	ret = strtok(NULL,p);
+//	printf("%s\n",ret); 
+	for(ret = strtok(arr,p);ret != NULL;ret = strtok(NULL,p))//巧妙 
+	{
+		printf("%s\n",ret);
+	}
+//	printf("%s\n",strerror(0));
+//	printf("%s\n",strerror(1));
+//	printf("%s\n",strerror(2));
+//	printf("%s\n",strerror(3));
+//	printf("%s\n",strerror(4));
+//	printf("%s\n",strerror(5));五种错误信息 
+	return 0;
+	
+ } 
