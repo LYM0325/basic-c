@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<ctype.h>
+//iscntrl 判断一个字符是不是控制字符 
+//isspace 判断一个字符是不是空白字符，空格' '，换页'\f'，换行'\n'，回车'\r'，制表符'\t''\v' 
+//isdigit 判断一个字符是不是十进制数字
+//isxdigit判断一个字符是不是十六进制数字
+//islower 判断一个字符是不是小写字母
+//isupper 判断一个字符是不是大写字母
+//isalpha 判断一个字符是不是字母
+//isalnum 判断一个字符是不是字母或者数字
+//ispunct 判断一个字符是不是标点符号
+//isgraph 判断一个字符是不是图形字符
+//isprint 判断一个字符是不是可打印字符 
+int main()
+{ 
+	char ch = 'S';
+	int ret = isdigit(ch); 
+	printf("%d\n",ret);//是数字字符返回非0，不是数字字符返回0(我的返回是1) 
+	ret = isupper(ch);
+	printf("%d\n",ret); 
+	return 0; 
+}
