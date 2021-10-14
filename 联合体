@@ -1,0 +1,32 @@
+#include<stdio.h>
+/*
+联合体也叫共用体，成员之间共用一块空间，联合体的大小至少是最大成员的大小
+联合体之间会相互影响，所以一次只能使用联合体中的一项
+联合体大小的计算
+联合体也是存在对齐的，当最大成员不是最大对齐数的整数背的时候，就要对齐到最大对齐数的整数倍 
+*/
+union un {
+	char a;
+	int i;
+};
+int check() {
+	union u {
+		char c;
+		int i;
+	} u;
+	u.i=1;
+	return u.c;
+}
+int main() {
+	union un n = {10};
+	printf("%d\n",sizeof(n));//4个字节
+	printf("%p\n",&n);
+	printf("%p\n",&(n.i));//空间地址一样
+	int ret = check();
+	if(ret == 1) {
+		printf("小端\n");
+	} else {
+		printf("大端");
+	}
+	return 0;
+}
