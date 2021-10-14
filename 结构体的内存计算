@@ -1,0 +1,42 @@
+#include<stdio.h>
+struct Node 
+{
+	int date;
+	struct Node* next;//结构体的自引用，不能写结构体的变量，要写结构体的指针 	
+}xx;//xx是全局变量 
+struct s
+{
+	int i;
+	char c;
+};
+struct S2 
+{
+	char c1;
+	int i;
+	double d;	
+};
+struct s3
+{
+	char c;
+	struct S2 s2;
+	double b;
+};
+int main()
+{
+	struct Node n;//n是局部变量 
+	struct s s1;
+	printf("%d ",sizeof(s1));//8
+	struct S2 s2;
+	printf("%d ",sizeof(s2));//16
+	struct s3 s3;
+	printf("%d ",sizeof(s3));//结构体嵌套 32 
+	/*结构体对齐规则 
+	1.结构体的第一个成员
+	放在结构体变量在内存中存储的0偏移处开始 
+	2.从第二个往后的所有成员，都放在一个对齐数
+	（成员的大小和默认对齐数8的较小值）的整数的整数倍的地址处
+	3.结构体的总大小是结构体的所有的成员中对齐数最大的那个对齐数的整数倍 
+	4.结构体嵌套时，嵌套的结构体对齐到自己的最大对齐数的整数倍，结构体的整体大小就是所有最大对齐数的整数倍 
+	*/
+	return 0;
+}
