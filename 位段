@@ -1,0 +1,20 @@
+/*
+	位段
+	位段的成员只能是int、unsigned int、signed int 和char 
+	位段的成员名后面有一个冒号和一个数字 
+	数字表示成员占几个比特位 
+	位段有很多不确定因素，所以不具有跨平台性
+	 
+*/
+#include<stdio.h>
+struct S	
+{
+	int a:3;
+	int b:4; 
+};
+
+int main()
+{
+	printf("%d ",sizeof(struct S));//4个字节 
+	return 0;
+} 
