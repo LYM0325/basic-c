@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+void getmemory(char* p) { //p时str的一份临时拷贝，p的值的改变不会影响str
+	p = (char*)malloc(100);//没有free会造成内存泄露
+}
+void test() {
+	char* str = NULL;
+	getmemory(&str);//这里是值传递，所以不会对str的内容进行改变，str依旧是空指针，所以程序不能执行
+	strcpy(str,"hello world");
+	printf(str);//没有free会造成内存泄露
+	free(str);
+	str = NULL;
+}
+/*
+修改后的版本
+char* getmemory(char* p)
+{
+	p = (char*)malloc(100);
+	return p;
+}
+void test()
+{
+	char* str = NULL;
+	str = getmemory(str);
+	strcpy(str,"hello world");
+	printf(str);
+	free(str);
+	str = NULL;
+}
+*/
+/*
+void getmemory(char** p)//所以要用一个二级指针接受 
+{
+	*p = (char*)malloc(100);
+}
+void test()
+{
+	char* str = NULL;
+	getmemory(&str);//这里传str的地址 
+	strcpy(str,"hello world");
+	printf(str);
+	free(str);
+	str = NULL;
+}
+*/
+int main() {
+	test();
+	return 0;
+}
