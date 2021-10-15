@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main() {
+
+//	int * p = (int *)malloc(40);不会进行初始化 
+	int * p = (int *)calloc(10,4);//10个4字节的元素，并且初始化为0 
+	if(p == NULL)
+	{
+		return 1;
+	}
+	int i = 0;
+	for(i = 0;i<10;i++)
+	{
+		*(p+i) = 5; 
+	}
+	//realloc调整空间
+	int* ptr = realloc(p,20*sizeof(int));/*当后面的空间不够的时候会在内存中重新开辟空间，并把之前的空间释放 
+	当找不到合适的空间时，realloc会返回空指针，所以通常创建一个临时变量接受 
+	*/
+	if(ptr != NULL)
+	{
+		p = ptr;
+	}
+	free(p);
+	p = NULL;
+	return 0;
+}
