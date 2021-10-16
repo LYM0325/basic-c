@@ -1,0 +1,19 @@
+void getmemory(char**p,int num) {
+	*p = (char*)malloc(num);
+}
+void test(void) {
+	char* str =NULL;
+	getmemory(&str,100);
+	strcpy(str,"hello");
+	free(str);//问题处在这里，free后的str空间已经释放但是str不是空指针，所以进入if语句后非法访问已经被释放的空间 
+//	str = NULL; 
+	if(str != NULL)
+	{
+		strcpy(str,"world");
+		printf(str);
+	}
+}
+int main() {
+	test();
+	return 0;
+}
