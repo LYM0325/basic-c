@@ -1,0 +1,16 @@
+#include<stdio.h>
+char* getmemory(void)
+{
+	char p[] = "hello world";
+	return p;//函数内数组是在栈上开辟的空间，函数结束之后空间就还给了系统，但是使用malloc在堆上开辟的空间就不会 
+}
+void test(void)
+{
+	char* str = NULL;
+	str = getmemory();//地址传了过来，但是p指向的空间已经被释放了 
+	printf(str);
+}
+int main() {
+	test();
+	return 0;
+}
