@@ -1,0 +1,16 @@
+void getmemory(char**p,int num) {
+	*p = (char*)malloc(num);
+}
+void test(void) {
+	char* str =NULL;
+	getmemory(&str,100);
+	strcpy(str,"hello");
+	printf(str);
+//程序没有手动释放
+//	free(str);
+//  str = NULL;
+}
+int main() {
+	test();
+	return 0;
+}
