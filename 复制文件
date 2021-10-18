@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main()
+{
+	FILE*pfread = fopen("text.txt","r");
+	if(pfread == NULL)
+	{
+		return 1;
+	}
+	FILE*pfwrite = fopen("text2.txt","w");
+	if(pfwrite == NULL)
+	{
+		fclose(pfread);
+		pfread = NULL;
+		return 1;
+	}
+	int ch = 0;
+	while((ch = fgetc(pfread))!= EOF)
+	{
+		fputc(ch,pfwrite);
+	}
+	fclose(pfwrite);
+	pfwrite = NULL;
+}
