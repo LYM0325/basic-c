@@ -1,0 +1,27 @@
+/*
+scanf   针对标准输入的格式化的输入语句 - stdin 
+fscanf  针对所有输入流的格式化输入语句 
+sscanf  把一个字符串还原成结构体 
+
+printf  针对标准输出的格式化输出语句 - stdout 
+fprintf 针对所有输出流的格式化输出语句 
+sprintf 把一个格式化的数据转换成字符串 
+*/
+#include<stdio.h>
+struct s 
+{
+	char ch[10];
+	int i;
+	float d;
+};
+int main()
+{
+	struct s s1 = {"hello",10,5.5f};
+	struct s tmp = {0};
+	char buf[100] = {0};
+	sprintf(buf,"%s %d %f",s1.ch,s1.i,s1.d);
+	printf("%s\n",buf);
+	
+	sscanf(buf,"%s %d %f",tmp.ch,&(tmp.i),&(tmp.d));
+	printf("%s %d %f\n",tmp.ch,tmp.i,tmp.d);
+}
