@@ -1,5 +1,5 @@
-//默认对齐数是4
 #include<stdio.h>
+#pragma pack(4)//默认对齐数是4
 struct A
 {
 	int a;
