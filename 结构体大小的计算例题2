@@ -1,0 +1,27 @@
+#include<stdio.h>
+struct A
+{
+	short a;
+	char b;
+	long c;
+	long d;
+};
+struct B
+{
+	long a;
+	short b;
+	char c;
+	long d;
+};
+struct C
+{
+	short a;
+	long b;
+	char c;
+	long d;
+};
+int main()
+{
+	 printf("%d %d %d",sizeof(struct A),sizeof(struct B),sizeof(struct C));//12 12 16
+	return 0;
+}
