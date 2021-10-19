@@ -1,0 +1,22 @@
+//默认对齐数是4
+#include<stdio.h>
+struct A
+{
+	int a;
+	short b;
+	int c;
+	char d;
+};
+struct B
+{
+	int a;
+	short b;
+	char c;
+	int d;
+};
+int main()
+{
+	printf("%d\n",sizeof(struct A));//16
+	printf("%d\n",sizeof(struct B));//12
+	return 0;
+}
