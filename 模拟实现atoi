@@ -1,0 +1,58 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<ctype.h>
+enum State {
+    INVALID,
+    VALID
+};
+enum State state = INVALID;
+int my_atoi(const char* s) {
+	//空指针
+	if(NULL == s) {
+		return 0;
+	}
+	//空字符串
+	if(*s == '\0') {
+		return 0;
+	}
+	//跳过空白字符
+	while(isspace(*s)) {
+		s++;
+	}
+	//+ - 号问题
+	int flag = 0;
+	if(*s == '+') {
+		flag = 1;
+		s++;
+	} else if(*s == '-') {
+		flag =-1;
+		s++;
+	}
+	//处理数字字符的转换
+	int n = 0;
+	while(isdigit(*s)) 
+	{
+		n = n*10+flag*(*s - '0');
+		s++;	
+	}
+	if(*s == '\0')
+	{
+		state = VALID;
+		return (int)n;
+	}
+	else
+	{
+		return 0;
+	}
+}
+int main() {
+//	const char *p = "-1234";
+//	int ret = atoi(p);
+//	printf("%d",ret);
+
+	const char *p = "-1234";
+	int ret = my_atoi(p);
+	printf("%d",ret);
+
+	return 0;
+}
