@@ -8,7 +8,7 @@ void Find(int arr[],int size) {
 	}
 	//2.查找所有的数异或在一起后的结果哪一位为1
 	int pos = 0;
-	for(i = 0; i<size; i++) {
+	for(i = 0; i<32; i++) {
 		if(((ret>>i)&1) == 1) {
 			pos = i;
 			break;
