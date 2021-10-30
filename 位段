@@ -15,6 +15,6 @@ struct S
 
 int main()
 {
-	printf("%d ",sizeof(struct S));//4个字节 
+	printf("%d ",sizeof(struct S));//虽然开辟了4个字节，但是实际上只占用了七个比特位 
 	return 0;
 } 
