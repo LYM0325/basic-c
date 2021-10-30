@@ -16,6 +16,7 @@ int main()
 	printf("%d\n",a); 
 	int n =10;
 	int arr[10] = {0};//arr[]中应该输入一个常量，但是不能是常变量 
+	//int arr [num] = {0};这样的语句不能编译通过
 	int arra[IP] = {0}; //这里的IP可以使用 
     printf("%d\n",male);//0 
     printf("%d\n",female);//1
