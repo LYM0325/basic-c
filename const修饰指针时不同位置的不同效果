@@ -4,7 +4,7 @@ int main()
 	const int num = 10;
 	int  n = 20; 
 	const int* p = &num;
-	*p = 20; //不行 因为指针被const修饰，所以指针指向的内容不能被修改。
+	*p = 20; //不行 因为指针被const修饰，所以被指针指向的内容不能被修改。
 	p = &n;//可以 指针变量本身是可以被修改的
 	printf("%d %d",num,*p);
 	int *const p = &num;
