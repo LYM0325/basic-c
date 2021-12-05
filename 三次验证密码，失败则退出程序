@@ -5,7 +5,7 @@ int main()
 	char password[20];
 	for(i = 0;i<3;i++)
 	{
-		printf("请输入密码：");
+		printf("请输入密码:");
 		scanf("%s",password);
 		//if(password == "123456")//==不能用来比较两个字符串是否相同 
 		if(strcmp(password , "123456") == 0)//两个数相等返回0，前面的数大返回一个正数，反之返回一个负数 
