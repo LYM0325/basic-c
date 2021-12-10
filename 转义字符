@@ -6,6 +6,5 @@ int main()
 	printf("c:\\test\\32\\test.c\n"); //我转我自己
 	printf("%c\n",'\''); 
 	printf("%d\n",strlen("c:\test\32\test.c"));//输出的结果是13，其中的\32代表的是一个转义字符，其中的32是八进制的数字,\ddd代表的是八进制的数字，\xdd代表的是十六进制的数字。
-	
 	return 0;
 }
