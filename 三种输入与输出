@@ -3,6 +3,7 @@ scanf   针对标准输入的格式化的输入语句 - stdin
 fscanf  针对所有输入流的格式化输入语句 
 sscanf  把一个字符串还原成结构体 
 
+
 printf  针对标准输出的格式化输出语句 - stdout 
 fprintf 针对所有输出流的格式化输出语句 
 sprintf 把一个格式化的数据转换成字符串 
